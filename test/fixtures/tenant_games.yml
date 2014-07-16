@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tenant_id: 1
+  game_id: 1
+  active: 1
+  activated_at: 2014-07-16 21:58:17
+  rank: 
+  unique_clicks_count: 1
+  state: MyString
+
+two:
+  tenant_id: 1
+  game_id: 1
+  active: 1
+  activated_at: 2014-07-16 21:58:17
+  rank: 
+  unique_clicks_count: 1
+  state: MyString
