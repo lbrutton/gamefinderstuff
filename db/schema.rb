@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140723160121) do
 
   create_table "accounts", force: true do |t|
     t.integer  "tenant_id"
@@ -52,6 +52,11 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "accounts", ["remember_me_token"], name: "index_ad_accounts_on_remember_me_token", using: :btree
   add_index "accounts", ["reset_password_token"], name: "index_ad_accounts_on_reset_password_token", using: :btree
   add_index "accounts", ["uuid"], name: "index_ad_accounts_on_uuid", unique: true, using: :btree
+
+  create_table "android_games", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "app_assets", force: true do |t|
     t.integer  "app_id"
@@ -426,6 +431,11 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   add_index "gifts", ["sender_user_id"], name: "index_gifts_on_sender_user_id", using: :btree
+
+  create_table "ios_games", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "label_translations", force: true do |t|
     t.integer  "game_category_id"

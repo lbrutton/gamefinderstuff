@@ -1,11 +1,16 @@
-Lots and lots of games:
+Title first:
 
-<ul>
+</br><%= @game.title %>
 
-<% @firstgame.each do |game| %>
+<p> then the description: </p>
+<p> <%= @game.review %> </p>
 
-	<li> <%= game.title %>
-	</li>
-	<% end %>
+<p> then the pros and cons: </p>
+<p> Pros: </p>
+<p> <%= @game.review_pros %>
+</p>
+<p> Cons: </p>
+<p> <%= @game.review_cons %>
+	</p>
 
-</ul>
+

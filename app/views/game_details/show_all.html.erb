@@ -1,0 +1,12 @@
+Lots and lots of games:
+
+<ul>
+
+<% @firstgame.each do |game| %>
+
+	<li> <%= game.title %>
+		<%= link_to('See game details', game) %>
+	</li>
+	<% end %>
+
+</ul>

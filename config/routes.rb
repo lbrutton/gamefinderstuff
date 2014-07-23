@@ -3,7 +3,11 @@ Example::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'game_details#show'
+  root 'games#show_all'
+  resources :games
+  match '/english', to: 'languages#english', via: 'get'
+  match '/german', to: 'languages#german', via: 'get'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

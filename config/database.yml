@@ -12,7 +12,7 @@
         host: localhost
     production:
         adapter: mysql
-        database: game_finder
-        username: root
-        password:
+        database: 'game_finder2'
+        username: gamefinder
+        password: police73
         host: localhost

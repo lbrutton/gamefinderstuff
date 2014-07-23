@@ -1,0 +1,12 @@
+<%= will_paginate %>
+<div class='container'>
+	<% @games.each do |game| %>
+	<ul>
+		<li> <%= game.name %>
+		<%= link_to 'See game details', game_path(game) %>
+		</li>
+	</ul>
+	<% end %>
+</div>
+
+<%= will_paginate %>
