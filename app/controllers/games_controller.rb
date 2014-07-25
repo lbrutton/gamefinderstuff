@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
 
+	before_action :current_language
+
 	def show_all
 		@games = Games.paginate(page: params[:page])
 
