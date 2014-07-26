@@ -39,7 +39,7 @@
 		</br>
 			<% @game_detail.review_pros.split('","').each do |pro| %>
 			<ul>
-				<li><%= pro %></li>
+				<li><%= pro.delete('""[]') %></li>
 			</ul>
 			<% end %>
 		</div>
@@ -53,7 +53,8 @@
 		</br>
 			<% @game_detail.review_cons.split('","').each do |con| %>
 			<ul>
-				<li><%= con %></li>
+				<%# con.delete!('""[]') %>
+				<li><%= con.delete('""[]') %></li>
 			</ul>
 			<% end %>
 		</div>
