@@ -1,42 +1,30 @@
-
-<div class='container'>
+<div class='carousel container-fluid'>
 	<!--  Carousel - consult the Twitter Bootstrap docs at
       http://twitter.github.com/bootstrap/javascript.html#carousel -->
-<div id="this-carousel-id" class="carousel slide container"><!-- class of slide for animation -->
-  <div class="carousel-inner">
-    <div class="item active"><!-- class of active since it's the first item -->
-      <%= image_tag('screenshot2.jpeg', alt:'first screen')%>
-      <div class="carousel-caption">
-        <p>Caption text here</p>
-      </div>
-    </div>
-    <div class="item">
-      <%= image_tag('screenshot3.jpeg', alt:'first screen')%>
-      <div class="carousel-caption">
-        <p>Caption text here</p>
-      </div>
-    </div>
-    <div class="item">
-      <%= image_tag('screenshot4.jpeg', alt:'first screen')%>
-      <div class="carousel-caption">
-        <p>Caption text here</p>
-      </div>
-    </div>
-  </div><!-- /.carousel-inner -->
-  <!--  Next and Previous controls below
-        href values must reference the id for this carousel -->
-    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-</div><!-- /.carousel -->
+	<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+	  <div class="carousel-inner">
+	    <div class="item active"><!-- class of active since it's the first item -->
+	      <%= image_tag('screenshot2.jpeg', alt:'first screen')%>
+	    </div>
+	    <div class="item">
+	      <%= image_tag('screenshot3.jpeg', alt:'first screen')%>
+	    </div>
+	    <div class="item">
+	      <%= image_tag('screenshot4.jpeg', alt:'first screen')%>
+	    </div>
+	  </div><!-- /.carousel-inner -->
+	  <!--  Next and Previous controls below
+	        href values must reference the id for this carousel -->
+	    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+	    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+	</div><!-- /.carousel -->
+<div class="description container-fluid">
 	<h1><%= @game_detail.title %></h1>
 	<p><%= @game_detail.review  %></p>
-</br>
+	<hr>
 	<div class="row">
-		<div class="span4">
+		<div class="pros-and-cons">
 			<%= image_tag('plus.png', alt:'plus') %>
-		</div>
-		<div class="span8">
-		</br>
 			<% @game_detail.review_pros.split('","').each do |pro| %>
 			<ul>
 				<li><%= pro.delete('""[]') %></li>
@@ -44,26 +32,24 @@
 			<% end %>
 		</div>
 	</div>
-</br>
+<hr>
 	<div class="row">
-		<div class="span4">
+		<div class="pros-and-cons">
 			<%= image_tag('minus.png', alt:'minus') %>
-		</div>
-		<div class="span8">
 		</br>
-			<% @game_detail.review_cons.split('","').each do |con| %>
 			<ul>
-				<%# con.delete!('""[]') %>
+			<% @game_detail.review_cons.split('","').each do |con| %>
 				<li><%= con.delete('""[]') %></li>
-			</ul>
 			<% end %>
+			</ul>
 		</div>
 	</div>
-	</div>
-		<%= link_to "Download now!", @link, class: "btn btn-large btn-primary" %>
+	<hr>	
+	<div class="row">
+		<%= link_to "Download now!", @link, class: "btn btn-large btn-primary download-button" %>
 	</div>
 
 
 </div>
-    </div>
+</div>
 
