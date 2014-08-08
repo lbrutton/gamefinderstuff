@@ -1,4 +1,6 @@
 Example::Application.routes.draw do
+  get "platforms/ios"
+  get "platforms/android"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,6 +9,8 @@ Example::Application.routes.draw do
   resources :games
   match '/english', to: 'languages#english', via: 'get'
   match '/german', to: 'languages#german', via: 'get'
+  match '/ios', to: 'platforms#ios', via: 'get'
+  match '/android', to: 'platforms#android', via: 'get'
 
 
   # Example of regular route:

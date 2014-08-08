@@ -1,12 +1,12 @@
+<div class="container games-list">
 <%= will_paginate %>
-<div class='container'>
 	<% @games.each do |game| %>
 	<ul>
 		<li> <%= game.name %>
 		<%= link_to 'See game details', game_path(game) %>
 		</li>
+		<li> Game Finder Rating: <%= game.hitfox_rating_id %></li>
 	</ul>
 	<% end %>
-</div>
-
 <%= will_paginate %>
+</div>

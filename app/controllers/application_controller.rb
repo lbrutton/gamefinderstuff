@@ -6,7 +6,14 @@ class ApplicationController < ActionController::Base
 	def current_language #used to ensure that new sessions don't need to click on a language to avoid 
 		# raising an exception
 		if session[:language].nil?
-		session[:language] = 1
+		   session[:language] = 1
+		end
+	end
+
+	def current_platform #used to ensure that new sessions don't need to click on a platform to avoid 
+		# raising an exception
+		if session[:platform_type].nil?
+			session[:platform_type] = IosGame
 		end
 	end
 

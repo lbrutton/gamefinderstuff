@@ -1,0 +1,9 @@
+<div class="container results-list">
+	<% @results.each do |game| %>
+	<ul>
+		<li> <%= game.name %>
+		<%= link_to 'See game details', game_path(game) %>
+		</li>
+	</ul>
+	<% end %>
+</div>

@@ -20,11 +20,15 @@
 	</div><!-- /.carousel -->
 <div class="description container-fluid">
 	<h1><%= @game_detail.title %></h1>
-	<p><%= @game_detail.review  %></p>
+	<div class="row"><%(4 - @rating).times do %>
+		<%= image_tag('star.png', class:"rating") %>
+		<% end %>
+	</div>
+	<p><%= @game_detail.review %></p>
 	<hr>
 	<div class="row">
 		<div class="pros-and-cons">
-			<%= image_tag('plus.png', alt:'plus') %>
+			<%= image_tag('plus.png', alt:'plus', class:"fucker") %>
 			<% @game_detail.review_pros.split('","').each do |pro| %>
 			<ul>
 				<li><%= pro.delete('""[]') %></li>
@@ -35,7 +39,7 @@
 <hr>
 	<div class="row">
 		<div class="pros-and-cons">
-			<%= image_tag('minus.png', alt:'minus') %>
+			<%= image_tag('minus.png', alt:'minus', class:"fucker") %>
 		</br>
 			<ul>
 			<% @game_detail.review_cons.split('","').each do |con| %>
